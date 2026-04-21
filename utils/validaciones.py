@@ -51,3 +51,27 @@ def validar_tolerancia(tolerancia: float) -> None:
 
     if tolerancia <= 0:
         raise ValueError("La tolerancia debe ser mayor que cero.")
+
+
+def validar_max_iter(max_iter: int) -> None:
+    """
+    Verifica que el maximo de iteraciones sea positivo.
+    """
+
+    if max_iter <= 0:
+        raise ValueError("El numero maximo de iteraciones debe ser mayor que cero.")
+
+
+def validar_puntos_interpolacion(x_puntos, y_puntos) -> None:
+    """
+    Verifica la integridad de los puntos usados para interpolacion.
+    """
+
+    if len(x_puntos) != len(y_puntos):
+        raise ValueError("Las listas de x e y deben tener la misma cantidad de elementos.")
+
+    if len(x_puntos) < 2:
+        raise ValueError("Se requieren al menos dos puntos para interpolar.")
+
+    if len(set(x_puntos)) != len(x_puntos):
+        raise ValueError("Los valores de x no pueden repetirse en interpolacion.")

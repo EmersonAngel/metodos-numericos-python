@@ -1,130 +1,59 @@
-# 📊 Métodos Numéricos Aplicados a Ingeniería de Software
+# Metodos Numericos Aplicados a Ingenieria de Software
 
-Aplicación desarrollada en Python con interfaz gráfica moderna y oscura para la implementación y visualización de métodos numéricos aplicados a problemas reales de Ingeniería de Software.
+Aplicacion de escritorio en Python para visualizar y comparar metodos numericos con una interfaz grafica tipo dashboard.
 
----
+## Metodos incluidos
 
-## 🚀 Características
+- Biseccion
+- Falsa posicion
+- Punto fijo
+- Newton-Raphson
+- Secante
+- Interpolacion polinomica de Lagrange
 
-- Interfaz gráfica moderna (tema oscuro con tonos azulados)
-- Arquitectura modular organizada por carpetas
-- Implementación de métodos numéricos:
-  - Método de Bisección
-  - Método de Secante
-  - Método de Newton-Raphson
-- Visualización gráfica en tiempo real
-- Tabla de iteraciones
-- Cálculo de:
-  - Error absoluto
-  - Error relativo
-- Soporte para zoom interactivo con el mouse
-- Representación matemática visible en la interfaz
-- Gráfica completa de la función (incluye asíntotas cuando aplica)
+## Novedades
 
----
+- Se agrego un nuevo ejercicio de interpolacion polinomica.
+- La GUI ahora permite ingresar listas de puntos en formato CSV para interpolar.
+- Se reforzaron validaciones comunes en tolerancia, iteraciones y consistencia de datos.
+- Se corrigieron y ampliaron las pruebas unitarias.
 
-## 🧠 Ejercicio 1 – Optimización de Hash Table
+## Uso
 
-Se implementa el método de bisección para resolver:
-
-T(λ) = 2.5 + 0.8λ² − 3.2λ + ln(λ + 1)
-
-### 📌 Objetivo
-
-Encontrar el valor óptimo del factor de carga λ que minimiza el tiempo promedio de búsqueda en una hash table.
-
-### 🔎 Consideraciones Matemáticas
-
-- Dominio: λ > -1
-- Existe una asíntota vertical en λ = -1
-- La función presenta comportamiento no lineal debido al término logarítmico
-- Se requiere cambio de signo para aplicar bisección
-
----
-
-## 🏗️ Estructura del Proyecto
-metodos_numericos/
-│
-├── main.py
-│
-├── metodos/
-│ ├── biseccion.py
-│ ├── secante.py
-│ ├── falsa_posicion.py
-│ ├── punto_fijo.py
-│ ├── funciones.py
-│ └── newton.py
-│
-├── funciones/
-│ └── definiciones.py
-│
-├── utils/
-│ ├── evaluador.py
-│ └── validaciones.py
-│
-├── interfaz/
-│ └── gui_principal.py
-│  
-├── tests/
-│ └── test_metodos.py
-│
-└── requirements.txt
-
-
----
-
-## ⚙️ Requisitos
-
-Instalar dependencias:
+1. Instala dependencias:
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
-## requirements.txt
-- numpy
-- matplotlib
+2. Ejecuta la aplicacion:
 
-## ▶️ Ejecución
-
-Desde la raíz del proyecto:
 ```bash
 python main.py
-````
+```
 
-## 📈 Funcionalidades de Visualización
+## Interpolacion polinomica
 
-- Gráfica completa de la función
+En el Ejercicio 6:
 
-- Línea horizontal en y = 0
+- Campo 1: valores de `x` separados por comas. Ejemplo: `0,1,2,3`
+- Campo 2: valores de `y` separados por comas. Ejemplo: `1,3,2,5`
+- Campo 3: valor `x` donde se desea evaluar el polinomio. Ejemplo: `1.5`
 
-- Asíntota vertical cuando corresponde
+La tabla muestra los terminos de la base de Lagrange y su contribucion, y la grafica muestra:
 
-- Zoom con rueda del mouse
+- El polinomio interpolante
+- Los puntos originales
+- El punto evaluado
 
-- Visualización de iteraciones sobre la curva
+## Estructura
 
-- Gráfica de convergencia del error
-
-## 📚 Métodos Implementados
-- Método de Bisección
-
-- Requiere cambio de signo
-
-- Tolerancia configurable
-
-- Máximo de iteraciones configurable
-
-- Registro completo de cada iteración
-
-- Método de Secante
-
-- No requiere derivada
-
-- Aproximación iterativa basada en dos puntos
-
-- Método de Newton
-
-- Usa derivada analítica
-
-- Convergencia cuadrática cuando aplica
+```text
+metodos_numericos/
+|-- main.py
+|-- funciones/
+|-- interfaz/
+|-- metodos/
+|-- tests/
+`-- utils/
+```
